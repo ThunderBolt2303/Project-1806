@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbha Night Invitation 💃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b500);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: slideIn 1s ease-out;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .dancing-girl {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            animation: dance 2s ease-in-out infinite;
+            font-size: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes dance {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            50% { transform: rotate(-3deg) scale(1); }
+            75% { transform: rotate(3deg) scale(1.1); }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            animation: sparkle 3s linear infinite;
+            font-size: 20px;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        h1 {
+            color: #c44569;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .question {
+            font-size: 1.4rem;
+            color: #444;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .no-btn {
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+            color: white;
+            animation: shrink 3s ease-in-out infinite;
+        }
+
+        @keyframes shrink {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        .celebration {
+            display: none;
+            animation: celebration 1s ease-out;
+        }
+
+        @keyframes celebration {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-180deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(0deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 30px;
+            animation: floatUp 4s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(100vh) scale(0);
+            }
+            15% {
+                transform: translateY(85vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkles" id="sparkles"></div>
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container" id="container">
+        <div class="dancing-girl">💃</div>
+        <h1>Garbha Night Invitation</h1>
+        <div class="question" id="question">
+            Beautiful! Would you like to join me for Garbha night? 
+            <br>🌟 Dance under the stars with me! ✨
+        </div>
+        <div class="buttons">
+            <button class="yes-btn" onclick="sayYes()">YES! 💖</button>
+            <button class="no-btn" onclick="sayNo()" id="noBtn">No</button>
+        </div>
+
+        <div class="celebration" id="celebration">
+            <h2 style="color: #c44569; margin: 20px 0;">🎉 Yay! It's going to be magical! 🎉</h2>
+            <p style="color: #666; font-size: 1.2rem;">Can't wait to dance with you! 💃🕺</p>
+        </div>
+    </div>
+
+    <script>
+        let noClickCount = 0;
+        
+        const noResponses = [
+            "Are you sure? It'll be so much fun! 🥺",
+            "Pretty please? I promise it'll be amazing! 🌟",
+            "Come on, just one dance? 💫",
+            "I'll teach you the steps! It'll be beautiful! 🌸",
+            "Think of all the wonderful memories we'll make! ✨",
+            "The music, the colors, the joy... join me? 🎵",
+            "You're going to make me dance alone? 🥺💔",
+            "I already bought matching outfits! 👗💕",
+            "The stars are aligned for us to dance! ⭐",
+            "Last chance to say yes... pretty please? 🙏✨"
+        ];
+
+        const noBtnTexts = [
+            "No",
+            "Still No?",
+            "Really No?",
+            "Maybe Yes?",
+            "Think Again?",
+            "One More Try?",
+            "Please? 🥺",
+            "For Me? 💕",
+            "Final Answer?",
+            "Say Yes! 💖"
+        ];
+
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.innerHTML = '✨';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.animationDelay = Math.random() * 3 + 's';
+                    sparklesContainer.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 3000);
+                }, Math.random() * 1000);
+            }
+        }
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '💖';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 4 + 's';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, Math.random() * 1500);
+            }
+        }
+
+        function sayYes() {
+            document.querySelector('.question').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('celebration').style.display = 'block';
+            
+            // Create massive celebration
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.innerHTML = ['🎉', '✨', '💖', '🌟', '💫'][Math.floor(Math.random() * 5)];
+                    sparkle.style.position = 'absolute';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    sparkle.style.fontSize = '30px';
+                    sparkle.style.animation = 'celebration 2s ease-out';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        function sayNo() {
+            noClickCount++;
+            const container = document.getElementById('container');
+            const question = document.getElementById('question');
+            const noBtn = document.getElementById('noBtn');
+            
+            container.classList.add('shake');
+            setTimeout(() => container.classList.remove('shake'), 500);
+            
+            if (noClickCount <= noResponses.length) {
+                question.innerHTML = noResponses[noClickCount - 1];
+                noBtn.innerHTML = noBtnTexts[Math.min(noClickCount, noBtnTexts.length - 1)];
+                
+                // Make the No button smaller each time
+                noBtn.style.transform = `scale(${1 - (noClickCount * 0.1)})`;
+                
+                // Make Yes button bigger and more attractive
+                const yesBtn = document.querySelector('.yes-btn');
+                yesBtn.style.transform = `scale(${1 + (noClickCount * 0.1)})`;
+                yesBtn.style.boxShadow = `0 ${8 + noClickCount * 2}px ${20 + noClickCount * 5}px rgba(255, 107, 157, 0.4)`;
+            }
+            
+            if (noClickCount >= 10) {
+                // After 10 nos, automatically say yes
+                setTimeout(() => {
+                    sayYes();
+                }, 1000);
+            }
+        }
+
+        // Initialize animations
+        createSparkles();
+        createHearts();
+        
+        setInterval(createSparkles, 5000);
+        setInterval(createHearts, 6000);
+    </script>
+</body>
+</html>
